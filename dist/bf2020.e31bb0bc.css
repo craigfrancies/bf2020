@@ -1,0 +1,295 @@
+body {
+  font-family: "Proxima Nova", "Inter", sans-serif;
+  background: #1e2025;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: #282b30;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.card .media {
+  padding-top: 75%;
+  position: relative;
+}
+.card .media img {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.card .media .saving {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  background: linear-gradient(85deg, #e10a0a 0%, #b80000 100%);
+  padding: 4px 8px;
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 600;
+  border-radius: 4px;
+  color: #fff;
+}
+.card .media .flag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.15);
+}
+.card .media .flag-just-added {
+  background: #fff;
+}
+.card .media .flag-toppick {
+  background: linear-gradient(225deg, #9f31bc 0%, #4b1568 100%);
+  color: #fff;
+}
+.card .media .flag-goingfast {
+  background: linear-gradient(267.46deg, #fe00bc 0%, #e14b0a 100%);
+  color: #fff;
+}
+.card .content {
+  padding: 28px 16px 16px;
+}
+.card .content .product-name {
+  color: #f6f8fc;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  margin-bottom: 16px;
+}
+.card .content .description {
+  margin: 0;
+  padding: 0 0 0 16px;
+}
+.card .content .description li {
+  font-size: 14px;
+  line-height: 18px;
+  color: #cdd0d6;
+  margin-bottom: 8px;
+}
+.card .pricing {
+  color: #cdd0d6;
+  padding: 0 16px 24px;
+  margin-top: auto;
+}
+.card .pricing .price {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  color: white;
+}
+.card .pricing .was {
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #cdd0d6;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  margin-left: 4px;
+}
+.card .pricing .card-cta {
+  width: 100%;
+  text-align: center;
+  background: #1e2025;
+  border: solid 1px #3b404a;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  color: #f6f8fc;
+  padding: 14px;
+  border-radius: 4px;
+  margin-top: 16px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+}
+.card-link:hover ~ .pricing .card-cta {
+  background: #e10a0a;
+  color: #fff;
+}
+
+.card--upcoming .pricing {
+  display: none;
+}
+.card--upcoming .teaser {
+  margin-top: auto;
+}
+.card--upcoming .teaser p {
+  color: #969dac;
+  font-size: 12px;
+  padding: 0 16px;
+}
+.card--upcoming .teaser .countdown {
+  background: yellow;
+  color: #1e2025;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1;
+  padding: 8px 16px;
+}
+
+.top-deals-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 928px;
+  margin: 0 auto 80px;
+}
+.top-deals-wrapper > div {
+  margin-bottom: 16px;
+}
+@media (max-width: 767px) {
+  .top-deals-wrapper {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+}
+
+.core-deals-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.core-deals-wrapper > div {
+  margin-bottom: 8px;
+}
+@media (max-width: 900px) {
+  .core-deals-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  .core-deals-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-left: calc((100vw - 1120px) / 2);
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+@media (max-width: 1120px) {
+  .carousel {
+    scroll-padding-left: 32px;
+  }
+}
+.carousel::-webkit-scrollbar {
+  height: 16px;
+}
+.carousel::-webkit-scrollbar-track {
+  background: #3b404a;
+  border-radius: 20px;
+  margin-left: calc((100vw - 1120px) / 2);
+  margin-right: calc((100vw - 1120px) / 2);
+}
+@media (max-width: 1120px) {
+  .carousel::-webkit-scrollbar-track {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+.carousel::-webkit-scrollbar-thumb {
+  background-color: #e10a0a;
+  border-radius: 20px;
+  border: 4px solid #3b404a;
+}
+.carousel > div {
+  width: 280px;
+  flex: 0 0 auto;
+  margin-right: 16px;
+  scroll-snap-align: start;
+}
+.carousel > div:first-child {
+  margin-left: calc((100vw - 1120px) / 2);
+}
+@media (max-width: 1120px) {
+  .carousel > div:first-child {
+    margin-left: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .carousel > div {
+    width: 60vw;
+  }
+}
+
+.bf-filters {
+  list-style: none;
+  margin: 0 auto 24px;
+  padding: 0;
+  max-width: 1120px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.bf-filters::-webkit-scrollbar {
+  display: none;
+}
+.bf-filters .label {
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+  color: white;
+  margin-right: 16px;
+  white-space: nowrap;
+}
+.bf-filters .pill {
+  background: #3b404a;
+  flex: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  color: #f6f8fc;
+  border-radius: 40px;
+  margin-right: 8px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: 0.15s ease-out all;
+}
+.bf-filters .pill:hover {
+  background: #969dac;
+}
+
+.placeholder-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 24px;
+  margin-top: 80px;
+}
+
+/*# sourceMappingURL=/bf2020.e31bb0bc.css.map */

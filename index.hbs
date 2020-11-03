@@ -1,0 +1,31 @@
+<html>
+  <head>
+    {{!-- ved core styles --}}
+    <link
+      rel="stylesheet"
+      href="https://www.virginexperiencedays.co.uk/_common/css/ved/core.css"
+    />
+    
+    {{!-- inter font - to make it a bit better, but use proxima in real --}}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    
+    <h2 class="placeholder-title">Top Deals</h2>
+    <div class="top-deals-wrapper">
+      {{> cardTop }}
+    </div>
+    
+    <h2 class="placeholder-title">Core Deals</h2>
+    {{> filter }}
+    <div class="core-deals-wrapper">
+      {{> cardCore }}
+    </div>
+
+    <h2 class="placeholder-title">Upcoming Deals</h2>
+    {{> cardUpcoming }}
+
+    <script src="./index.js"></script>
+  </body>
+</html>

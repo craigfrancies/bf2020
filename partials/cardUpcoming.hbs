@@ -1,0 +1,25 @@
+<div class="carousel">
+    
+{{# each productsUpcoming }}
+<div class="card  card--upcoming">
+    <div class="media">
+        <img src="{{ this.thumbnail }}" alt="{{ this.productName }}">
+        <span class="saving">Save {{ this.saving }}%</span>
+    </div>
+    <div class="content">
+        <h3 class="product-name">{{ this.productName }}</h3>
+    </div>
+    <div class="pricing">
+        <span class="price">{{ this.price }}</span>
+        <span class="was">{{ this.wasPrice }}</span>
+    </div>
+    <div class="teaser">
+        <p>Get early access to the price by  signing up to our Black Friday VIP list</p>
+
+        <div class="countdown"><strong>Live in: </strong>1 hRS, 23 MINS, 47 SECS</div>
+    </div>
+</div>
+{{/ each }}
+
+</div>
+
