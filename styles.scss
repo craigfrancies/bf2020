@@ -30,6 +30,7 @@ $black-900: rgba(0, 0, 0, 1);
 
 // breakpoints
 
+$container: 1120px;
 $breakpoint-mobile: 767px;
 
 // page general
@@ -142,6 +143,11 @@ body {
       line-height: 24px;
       font-weight: 700;
       color: $black-100;
+
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 18px;
+        line-height: 18px;
+      }
     }
 
     .was {
@@ -152,6 +158,10 @@ body {
       text-transform: uppercase;
       text-decoration: line-through;
       margin-left: 4px;
+
+      @media (max-width: $breakpoint-mobile) {
+        line-height: 18px;
+      }
     }
 
     .card-cta {
@@ -237,7 +247,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  max-width: 1120px;
+  max-width: $container;
   margin: 0 auto;
 
   > div {
@@ -259,11 +269,11 @@ body {
   overflow-x: auto;
   padding-bottom: 24px;
   -webkit-overflow-scrolling: touch;
-  scroll-padding-left: calc((100vw - 1120px) / 2);
+  scroll-padding-left: calc((100vw - $container) / 2);
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 
-  @media (max-width: 1120px) {
+  @media (max-width: $container) {
     scroll-padding-left: 32px;
   }
 
@@ -274,10 +284,10 @@ body {
   &::-webkit-scrollbar-track {
     background: $black-500;
     border-radius: 20px;
-    margin-left: calc((100vw - 1120px) / 2);
-    margin-right: calc((100vw - 1120px) / 2);
+    margin-left: calc((100vw - $container) / 2);
+    margin-right: calc((100vw - $container) / 2);
 
-    @media (max-width: 1120px) {
+    @media (max-width: $container) {
       margin-left: 16px;
       margin-right: 16px;
     }
@@ -296,15 +306,15 @@ body {
     scroll-snap-align: start;
 
     &:first-child {
-      margin-left: calc((100vw - 1120px) / 2);
+      margin-left: calc((100vw - $container) / 2);
 
-      @media (max-width: 1120px) {
+      @media (max-width: $container) {
         margin-left: 16px;
       }
     }
 
-    @media (max-width: 767px) {
-      width: 60vw;
+    @media (max-width: $breakpoint-mobile) {
+      width: 70vw;
     }
   }
 }
@@ -315,7 +325,7 @@ body {
   list-style: none;
   margin: 0 auto 24px;
   padding: 0;
-  max-width: 1120px;
+  max-width: $container;
   display: flex;
   align-items: center;
   overflow-x: auto;
@@ -323,6 +333,10 @@ body {
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  @media (max-width: $container) {
+    padding: 0 16px;
   }
 
   .label {
