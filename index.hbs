@@ -1,5 +1,7 @@
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     {{!-- ved core styles --}}
     <link
       rel="stylesheet"
@@ -13,15 +15,11 @@
   <body>
     
     <h2 class="placeholder-title">Top Deals</h2>
-    <div class="top-deals-wrapper">
       {{> cardTop }}
-    </div>
     
     <h2 class="placeholder-title">Core Deals</h2>
     {{> filter }}
-    <div class="core-deals-wrapper">
-      {{> cardCore }}
-    </div>
+    {{> cardCore }}
 
     <h2 class="placeholder-title">Upcoming Deals</h2>
     {{> cardUpcoming }}

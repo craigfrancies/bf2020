@@ -1,37 +1,39 @@
-{{#each productsTop }}
-<div class="card  card--top">
-    <a href="#" class="card-link"></a>
-    <div class="media">
+<div class="top-deals-wrapper">
+    {{#each productsTop }}
+    <div class="card  card--top">
+        <a href="#" class="card-link"></a>
+        <div class="media">
 
-        {{# if flag }}
-            {{# is flag "justadded"}}
-            <span class="flag  flag-just-added">Just Added</span>
-            {{/is }}
+            {{# if flag }}
+                {{# is flag "justadded"}}
+                <span class="flag  flag-just-added">Just Added</span>
+                {{/is }}
 
-            {{# is flag "toppick"}}
-            <span class="flag  flag-toppick">Top Pick</span>
-            {{/is }}
+                {{# is flag "toppick"}}
+                <span class="flag  flag-toppick">Top Pick</span>
+                {{/is }}
 
-            {{# is flag "goingfast"}}
-            <span class="flag  flag-goingfast">Going Fast</span>
-            {{/is }}
-        {{/ if }}
+                {{# is flag "goingfast"}}
+                <span class="flag  flag-goingfast">Going Fast</span>
+                {{/is }}
+            {{/ if }}
 
-        <img src="{{ this.thumbnail }}" alt="{{ this.productName }}">
-        <span class="saving">Save {{ this.saving }}%</span>
+            <img src="{{ this.thumbnail }}" alt="{{ this.productName }}">
+            <span class="saving">Save {{ this.saving }}%</span>
+        </div>
+        <div class="content">
+            <h3 class="product-name">{{ this.productName }}</h3>
+            <ul class="description">
+                {{# each this.description }}
+                <li>{{ this }}</li>
+                {{/each }}
+            </ul>
+        </div>
+        <div class="pricing">
+            <span class="price">{{ this.price }}</span>
+            <span class="was">{{ this.wasPrice }}</span>
+            <button class="card-cta">Add to Basket</button>
+        </div>
     </div>
-    <div class="content">
-        <h3 class="product-name">{{ this.productName }}</h3>
-        <ul class="description">
-            {{# each this.description }}
-            <li>{{ this }}</li>
-            {{/each }}
-        </ul>
-    </div>
-    <div class="pricing">
-        <span class="price">{{ this.price }}</span>
-        <span class="was">{{ this.wasPrice }}</span>
-        <button class="card-cta">Add to Basket</button>
-    </div>
+    {{/each }}
 </div>
-{{/each }}
